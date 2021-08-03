@@ -39,7 +39,7 @@ export default function ServiceSection() {
   const [videoOpen, setVideoOpen] = useState(false)
   const handleClick=(e)=>{
 e.preventDefault()
-setVideoOpen(true)
+   setVideoOpen(true)
   }
   return (
   <section sx={{variant: 'section-services'}}>
@@ -72,8 +72,8 @@ setVideoOpen(true)
         </Grid>
       </Box>
     </Container>
-    <ModalVideo 
-    channel='youtube' isOpen={videoOpen} videoId='iGBERMGMIvc' onClose={()=>{setVideoOpen(false)}}/>
+  {process.browser &&   <ModalVideo 
+    channel='youtube' isOpen={videoOpen} videoId='iGBERMGMIvc' onClose={()=>{setVideoOpen(false)}}/>}
   </section>
   );
 }
